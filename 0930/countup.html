@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>カウントアップ装置</title>
+</head>
+
+<body>
+    <p id="counter"></p>
+    <button id="plus">+1</button>
+    <script>
+        //変数を作って0を代入
+        let count = 0;
+        // コンソールにcountを表示
+        console.log(count);
+        // 変数にpを代入
+        let counter = document.querySelector("p#counter");
+        // documentはHTMLのこと
+        // CSSセレクターはCSSで使うセレクターが入ってる
+        console.log(counter);//p
+        counter.textContent = count;
+
+        // 素材は全部取り込む
+        const plusBtn = document.querySelector("#plus");
+        console.log(plusBtn)
+
+
+
+        let a;// 変数を宣言
+        console.log(a);//表示されない
+
+        a = 10;//変数aに10を代入
+        console.log(a);//10を表
+
+        let b = 20;//変数と同時に行う
+        console.log(b);//20を表示
+
+        b = 30;//変数bに30を代入
+        console.log(b);//30を表示
+        console.loga("b");
+    </script>
+</body>
+
+</html>
