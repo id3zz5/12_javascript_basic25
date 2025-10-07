@@ -14,7 +14,6 @@
 
 
 - 要素の取得
-
 document.querySlector(CSSセレクター);
 
 
