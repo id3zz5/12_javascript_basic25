@@ -88,8 +88,25 @@
     let index = 0;
     // indexは0,配列questionsの添字に当てはめる
     // 問題表示部分に配列から一問目が表示される
+    let score = 0;
     questionElem.textContent = questions[index];
 
+</script>
+
+<script>
+    // 文字列と数値型の連結
+    console.log('円周率は' + 3.14 + 'です');
+    // 円周率は3.14です
+    console.log('計算結果:' + 1234 + 5678);
+    // 計算結果:12345678
+    // 文字列のあとから文字列結合になる
+    console.log(1234 + 5678 + 'です');
+    // 6912です
+    console.log('計算結果は:', (1234 + 5678) + 'です');
+    // 計算結果は: 6912です
+    console.log('2' - 1);
+    // 1
+    // 掛け算割り算引き算は計算してくれる!
 </script>
 
 <script>
@@ -114,26 +131,34 @@
 
     // 回答ボタン
     respondBtn.addEventListener('click', function () {
-        const answer = answerInput.value;
+        let answer = answerInput.value;
         console.log(answer);
         // formの値を取りたいときはvalue
 
 
         // inputから数値を取得すると全て文字列になる
         // if文で、回答と解答を比較
+
+
         if (answer === answers[index]) {
             resultMessage.textContent = '正解です';
-        }
-        else {
+            score++;
+        } else {
             resultMessage.textContent = '不正解です';
         }
+
         index++;
-        questionElem.textContent = questions[index];
-        answer = '';//初期化
+        answerInput.value = ''; // ← 入力欄を初期化
 
-        console.log(answer);
-
+        if (index < questions.length) {
+            questionElem.textContent = questions[index];
+        } else {
+            questionElem.textContent = '最後の問題が終わったよ';
+            console.log('正解数:', score);
+        }
     });
+
+
 </script>
 <script>
     // if文
