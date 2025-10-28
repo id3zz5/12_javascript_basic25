@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>演習1028</title>
+</head>
+
+<body>
+    <script>
+        console.log(Math.PI);
+        console.log(Math.random() * 20);//0から19
+        console.log(Math.random() * (20 + 1) + 8);//0から20→8から28
+        console.log(Math.random() * (20 - 8 + 1));//最大13にしてから8を足しているので0+8=8,12+8=20最小は8最大は20
+
+        console.log(Math.random());//0から1満
+        console.log(Math.round(1.4));//四捨五入1
+        console.log(Math.round(1.5));//四捨五入2
+        console.log(Math.floor(10.3));//切り捨て
+        console.log(Math.ceil(10.3));//切り上げ
+
+        //関数を定義←セット！！！！！！！！！！！！！！！！！！！！！！！！
+        function hello() {
+            console.log('こんにちは');
+        }
+
+        //関数を定義しただけでは動かない
+        //関数を呼び出す=関数名();←セット！！！！！！！！！！！！！！！！！！！！！
+        hello();
+        hello();
+    </script>
+</body>
+
+</html>

@@ -46,14 +46,54 @@
         const images = document.querySelectorAll('img');
 
         const images = document.querySelectorAll('img');
-            for (let i = 0; i < images.length; i++) {
-                images[i].classList.add('show');
-            }
+        for (let i = 0; i < images.length; i++) {
+            images[i].classList.add('show');
+        }
         // for (let i = 0; i < images.length; i++) {
         //     images[i].classList.add('show');
         // }
 
 
+    </script>
+
+
+
+
+    <script>
+        //演習classList
+
+        //現在、hoverすると回るように設定されている。（CSS参照）
+        //Let'sダンスボタンをクリックすると、画像全てにclass属性にdanceが追加されて踊るようにしてください。
+        //ストップボタンを押すと、class属性からdanceを削除して止まるようにしてください。
+
+        // ①Let'sダンスボタンを取得し変数danceBtnに代入
+        const danceBtn = document.querySelector('.dancing');
+
+
+        // ②ストップボタンを取得し変数stopBtnに代入
+        const stopBtn =
+            document.querySelector('.stop');
+
+
+        // // ③画像を全て取得し、変数dacersに代入
+
+        const dancers =
+            document.querySelectorAll('img')
+
+        // // ④danceBtnをクリックしたら、画像全てのclass属性danceを設定する（for文で）
+        danceBtn.addEventListener('click', function () {
+            for (i = 0; i < dancers.length; i++) {
+                dancers[i].classList.add('dance');
+            }
+        });
+
+        // ⑤stopBtnをクリックしたら、画像全てのclass属性からdanceを削除する（for文で）
+
+        stopBtn.addEventListener('click', function () {
+            for (i = 0; i < dancers.length; i++) {
+                dancers[i].classList.remove('dance');
+            }
+        });
     </script>
 </body>
 
