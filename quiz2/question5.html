@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>おにぎり職人ゲーム</title>
+</head>
+
+<body>
+    <h1>🍙 おにぎり職人チャレンジ！</h1>
+    <p>
+        ボタンをクリックしてしゃけおにぎりを握ろう。<br />具材はランダムで決まるよ！
+    </p>
+    <button id="makeBtn">おにぎりを握る</button>
+    <p id="log">具材がここに表示されます。</p>
+    <p id="shakeCount"><span>0</span> 回</p>
+    <script>
+        //Q5で利用する
+        const shakeCount = document.querySelector('#shakeCount span');
+        let shakeCountNum = 0;
+        //ここに記述していきます。
+
+        function makeOnigiri() {
+            console.log("おにぎりを握った！");
+        }
+        makeOnigiri();
+
+        const ingredients = ['しゃけ', 'うめ', 'こんぶ', 'ツナマヨ'];
+
+        const makeBtn = document.querySelector('#makeBtn');
+
+        makeBtn.addEventListener('click', function () {
+            const index = Math.floor(Math.random() * ingredients.length);
+            const result = ingredients[index];
+            console.log(result);
+            if (result == 'しゃけ') {
+                shakeCountNum++;
+                // shakeCount= shakeCount(num+1)
+                shakeCount.textContent = shakeCountNum;
+            }
+        });
+    </script>
+
+    <script>
+        //ボタンを押して当たったら背景がピンク色、はずれたらグレー色になるようにしてください。
+
+        // 1. button要素を全て取得して、変数buttonsに代入する
+        const buttons = document.querySelectorAll('button');
+        console.log(buttons)
+        // 2. buttonsの要素数分、ランダムな数（0〜8）を生成する
+        const randomNum = Math.floor(Math.random() * buttons.length);
+        console.log(randomNum)
+
+        // 3. for文で、buttonsの要素数分、クリックイベントを設定する
+        for (let i = 0; i < buttons.length; i++) buttons[i].addEventListener('click', function () {
+            console.log('クリックしました' + i)
+            const bodyElm = document.querySelector('body');
+            console.log('body')
+            if (randomNum === i) {
+                bodyElm.classList.remove('loser')
+                bodyElm.classList.add('winner')
+
+            } else {
+                bodyElm.classList.remove('winner')
+                bodyElm.classList.add('loser')
+
+
+            }
+        });
+
+        // 4. もし、ランダムな数値と、クリックした要素のインデックスが一致したら、ピンク色にする（winnerクラスを追加して、loserクラスを削除する）
+
+        // 5. もし、ランダムな数数値と、クリックした要素のインデックスが一致しなかったら、グレー色にする（loserクラスを追加して、winnerクラスを削除する）
+    </script>
+</body>
+
+</html>
