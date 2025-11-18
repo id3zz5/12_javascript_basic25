@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>カラーボタン</h1>
+    <div class="colorlist">
+        <button id="red">赤色</button>
+        <button id="blue">青色</button>
+        <button id="green">緑色</button>
+        <button id="yellow">黄色</button>
+        <button id="pink">桃色</button>
+        <button id="purple">紫色</button>
+    </div>
+
+    <script>
+        //7
+        const buttons = document.querySelectorAll('button')
+        console.log(buttons)
+
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('click', function () {
+                if (buttons[i].id === 'red') {
+                    document.body.style.backgroundColor = 'red'
+                } else if (buttons[i].id === 'blue') {
+                    document.body.style.backgroundColor = 'blue'
+                } else if (buttons[i].id === 'green') {
+                    document.body.style.backgroundColor = 'green'
+                } else if (buttons[i].id === 'yellow') {
+                    document.body.style.backgroundColor = 'yellow'
+                } else if (buttons[i].id === 'pink') {
+                    document.body.style.backgroundColor = 'pink'
+                } else {
+                    document.body.style.backgroundColor = 'purple'
+                }
+            });
+        };
+
+    </script>
+</body>
+
+</html>

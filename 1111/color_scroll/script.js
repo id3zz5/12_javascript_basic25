@@ -7,6 +7,21 @@ const settingColors =
         { r: 0, g: 0, b: 255 },//青
         { r: 255, g: 255, b: 0 },
     ];//黄色
+
+// 10.関数の定義
+function colorChange(num) {
+    //関数の処理
+    document.body.style.backgroundColor =
+        'rgb(' +
+        settingColors[num].r +
+        ',' +
+        settingColors[num].g +
+        ',' +
+        settingColors[num].b +
+        ')';
+}
+
+
 // 5.documentの縦の長さ取得
 const fullHeight = document.documentElement.scrollHeight;
 console.log(fullHeight); //2400px
@@ -40,50 +55,38 @@ window.addEventListener('scroll', function () {
         window.scrollY;
     console.log(scrollY)
     // 7.スクロールを4分割
+    // 9.変数scrollableを4分割
     // 6.1 / 4進んだら色が変わるようにする
     if (scrollY < (scrollable * 1) / 4) {
-        document.body.style.backgroundColor =
-            'rgb(' +
-            settingColors[0].r +
-            ',' +
-            settingColors[0].g +
-            ',' +
-            settingColors[0].b +
-            ')';
+        // 11.関数の呼び出し（実行）の実引数
+        colorChange(0)
     } else if (scrollY < (scrollable * 1) / 2) {
-        document.body.style.backgroundColor =
-            'rgb(' +
-            settingColors[1].r +
-            ',' +
-            settingColors[1].g +
-            ',' +
-            settingColors[1].b +
-            ')';
+        colorChange(1)
     } else if (scrollY < (scrollable * 3) / 4) {
-        document.body.style.backgroundColor =
-            'rgb(' +
-            settingColors[2].r +
-            ',' +
-            settingColors[2].g +
-            ',' +
-            settingColors[2].b +
-            ')';
+        colorChange(2)
     } else {
-        document.body.style.backgroundColor =
-            'rgb(' +
-            settingColors[3].r +
-            ',' +
-            settingColors[3].g +
-            ',' +
-            settingColors[3].b +
-            ')';
+        colorChange(3)
     }
 });
 
 
+//ボタンの取得
+const button = document.querySelector('.moveToTop');
+console.log(button)
 
+//上に行く動作をつける
+button.addEventListener('click', function () {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    })
+});
 
-
-// 9.変数scrollableを4分割
-// 10.関数の定義
-// 11.関数の呼び出し（実行）の実引数
+//200より下にきたらボタンを出現させる
+window.addEventListener('scroll', function () {
+    if (this.window.scrollY >= 1200) {
+        button.style.display = 'block';
+    } else {
+        button.style.display = 'none';
+    }
+});
