@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>演習1125</title>
+</head>
+
+<body>
+    <div class="innerhtml"></div>
+
+
+
+
+
+    <script>
+        //テンプレートリテラルの練習
+        const name = 'Alice';
+        //文字列の連結
+        console.log('私の名前は' + name + 'です。');
+
+        //テンプレートリテラル
+        //プラスなし
+        console.log(`私の名前は${name}です！！！！！！！！！！！`)
+
+
+        //改行もなる！！！！！
+        const text = `私の名前は、
+            ${name}です。`
+        console.log(text)
+
+
+
+        //innerhtmlの復讐
+        const innerhtml = document.querySelector('.innerhtml');
+        // innerhtml.textContent = '<h1>Hello</h1>'
+
+        //コードのまま表示されない！！！！！！！！
+        innerhtml.innerHTML = '<h1>Hello</h1>'
+
+
+
+        function PI() {
+            //コンソールに表示
+            console.log(3.14);
+        }
+        //関数の実行
+        PI();
+
+        function PI2() {
+            //戻って来る値
+            return 3.14;
+        }
+        //関数の実行
+        //ここでは出ない→値を出すところがないから
+        PI2();
+
+        //ここで出る
+        //場所や方法を決められる
+        const result = PI2();//戻り値を変数の代入
+        console.log(result);//表示
+
+
+
+        //引数を二倍
+        //()に数字を入れたら、rresultで返す
+        function double(number) {
+            const result = number * 2;
+            return result;
+        }
+
+        const a = double(10);//仮引数
+        console.log(a);
+
+        const b = double(8);
+        console.log(b)
+
+
+
+        //関数式(主流！！！！！！)
+        //functionには名前をつけない
+        const sayHello = function () {
+            console.log('こんにちは')
+        }
+        //関数の呼び出し方は変わらない
+        sayHello();
+
+        //上の書き換えたバージョン
+        function sayHello2() {
+            console.log('こんにちは')
+        }
+        sayHello2();
+
+
+
+        function makeJuice(fruit) {
+            console.log(fruit + 'ジュース');
+        }
+        //実行
+        makeJuice('りんご');
+
+
+        //関数式で名前をつける
+        const makeJuice2 = function (fruit) {
+            console.log(fruit + 'ジュース');
+        }
+
+        makeJuice2('みかん');
+    </script>
+</body>
+
+</html>
