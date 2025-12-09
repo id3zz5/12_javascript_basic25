@@ -1,0 +1,118 @@
+body {
+    font-family: "Kaisei Tokumin", serif;
+    margin: 0 auto;
+    max-width: 1000px;
+    color: #fff;
+    background-color: #F7D4E3;
+    font-size: 20px;
+}
+
+.seizas__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px 60px;
+    justify-content: start;
+}
+
+.seizas__title {
+    margin: 30px 0;
+    font-size: 64px;
+    line-height: 1.2;
+    font-weight: bold;
+    text-align: center;
+}
+
+.seizas__text {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.seizas__cap {
+    color: #CCA6FD;
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.seizas__btn {
+    transition: transform 0.7s ease;
+    transform-style: preserve-3d;
+}
+
+.seizas-card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: #fff;
+    border-radius: 25px;
+
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+}
+
+.seizas__btn:hover img {
+    animation: pyon 0.45s ease-in-out 3;
+}
+
+@keyframes pyon {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* 表・裏共通 */
+.seizas-front,
+.seizas-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.seizas-front {
+    background: transparent;
+}
+
+
+.seizas-back {
+    color: #CCA6FD;
+    background-color: #fff;
+    border-radius: 25px;
+    text-align: center;
+    font-weight: bold;
+    transform: rotateY(180deg);
+}
+
+.seizas-back h2 {
+    margin-bottom: 5px;
+}
+
+.seizas-back p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+/* .seizas-back p:nth-child(1) {
+    font-weight: normal;
+} */
+
+/* 半回転 */
+.seizas__btn.is-rotate .seizas-card {
+    transform: rotateY(180deg);
+}
