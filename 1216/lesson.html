@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 同期処理（一つずつしか処理できない）
+        const syncAlert = () => {
+            alert('アラートを表示');
+            console.log('ログを出力');
+        };
+        syncAlert();
+
+
+        // 非同期処理（同時に処理できる）
+        function asyncAlert() {
+            setTimeout(function () {
+                alert('アラートを表示');
+            }, 0);
+            console.log('ログを出力');
+        };
+        asyncAlert();
+    </script>
+</body>
+
+</html>
